@@ -26,10 +26,10 @@ int main()
       scanf("%d", &slot);
 
       if(slot<1 || slot>9)
-        printf("You must not know how to read!! I said numbers between 1-9.\n");
+        printf("Invalid input! Enter number between 1-9.\n");
       else if(spc[slot]=='X' || spc[slot]=='O') 
       {  
-        printf("Are you an idiot? Choose another number!\n");
+        printf("This slot is already chosen.\n");
         continue;
       }
       if(slot>=1&&slot<=9)
