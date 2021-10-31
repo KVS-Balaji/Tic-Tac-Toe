@@ -42,9 +42,10 @@ int main()
         }
         if(slot>=1&&slot<=9)
           break;
-      }while(x==0);
+      }
+      while(x==0);
 
-      //deciding if player 1 or 2 and assigning respected values
+      //deciding if player 1 or 2 and assigning respected signs
       if(i%2!=0)
       {
         spc[slot]='X';
@@ -60,13 +61,13 @@ int main()
       if((spc[1]=='X'&&spc[2]=='X'&&spc[3]=='X') || (spc[4]=='X'&&spc[5]=='X'&&spc[6]=='X') || (spc[7]=='X'&&spc[8]=='X'&&spc[9]=='X') || (spc[1]=='X'&&spc[4]=='X'&&spc[7]=='X') || (spc[2]=='X'&&spc[5]=='X'&&spc[8]=='X') || (spc[3]=='X'&&spc[6]=='X'&&spc[9]=='X') || (spc[1]=='X'&&spc[5]=='X'&&spc[9]=='X') || (spc[3]=='X'&&spc[5]=='X'&&spc[7]=='X') || (spc[1]=='O'&&spc[2]=='O'&&spc[3]=='O') || (spc[4]=='O'&&spc[5]=='O'&&spc[6]=='O') || (spc[7]=='O'&&spc[8]=='O'&&spc[9]=='O') || (spc[1]=='O'&&spc[4]=='O'&&spc[7]=='O') || (spc[2]=='O'&&spc[5]=='O'&&spc[8]=='O') || (spc[3]=='O'&&spc[6]=='O'&&spc[9]=='O') || (spc[1]=='O'&&spc[5]=='O'&&spc[9]=='O') || (spc[3]=='O'&&spc[5]=='O'&&spc[7]=='O'))
       {
         printf("Player%i won the game!\n", player);
-      
+        printf("\n");
         printf("%c|%c|%c\n", spc[1], spc[2], spc[3]);
         printf("-|-|-\n");
         printf("%c|%c|%c\n", spc[4], spc[5], spc[6]);
         printf("-|-|-\n");
         printf("%c|%c|%c\n", spc[7], spc[8], spc[9]);
-
+        printf("\n");
         //function calling for game replay
         a=replay();
 
@@ -86,13 +87,13 @@ int main()
       }
     }
     printf("This game is a draw!\n");
-
+    printf("\n");
     printf("%c|%c|%c\n", spc[1], spc[2], spc[3]);
     printf("-|-|-\n");
     printf("%c|%c|%c\n", spc[4], spc[5], spc[6]);
     printf("-|-|-\n");
     printf("%c|%c|%c\n", spc[7], spc[8], spc[9]);
-
+    printf("\n");
     //function calling for game replay 
     a=replay();
 
@@ -108,21 +109,22 @@ int main()
       printf("You chose to end the game!Thank you for playing!!\n");
       return 0;
     }
-    }while(b==121);
+  }
+  while(b==121);
 
-    return 0;
+  return 0;
 }
 
 //function defining for game replay
 int replay()
 {
   char play;
-  int int_play;
+  int replay;
 
   printf("Do you want to play again (y/n)? ");
   scanf(" %c", &play);
 
-  int_play = play;
+  replay = play;
 
-  return int_play;
+  return replay;
 }
